@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang "en">
+	<!-- created 2024-04-28 -->
+
+<head>
+	<meta charset="UTF'8">
+	<meta http-esquiv="X-UA-Compatible" content="IE=edge">
+	<meta name = "viewport" content="width=device-width, initial-scale=1.0">
+	<title>SUBLIM3 - Links</title>
+	<link rel="icon" type="image/x-icon" href="ico.ico">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="card">
+		<div class="header">
+			<img class="p2p" src="PP.webp" alt="P2P">
+		</div>
+		<button class="social-media-button" onclick="OpenInNewTabWinBrowser('https://sublim3.gumroad.com/l/bolts-sublim3?layout=profile');">
+			<img class="social-media-img" src="gumroad.webp" alt="gumroad">
+			<span class="social-media-name">Last Article</span>
+		</button>
+		<div class="links">
+			<button class="social-media-button" onclick="OpenInNewTabWinBrowser('https://sublim3.gumroad.com');">
+				<img class="social-media-img" src="gumroad.webp" alt="gumroad">
+				<span class="social-media-name">Gumroad</span>
+			</button>
+			<button class="social-media-button" onclick="OpenInNewTabWinBrowser('https://www.instagram.com/sublim3_3d/');">
+				<img class="social-media-img" src="insta.webp" alt="insta">
+				<span class="social-media-name">Instagram</span>
+			</button>
+			<button class="social-media-button" onclick="OpenInNewTabWinBrowser('https://x.com/sublim3_3d');">
+				<img class="social-media-img" src="twitter.webp" alt="twitter">
+				<span class="social-media-name">Twitter</span>
+			</button>
+			<button class="social-media-button" onclick="OpenInNewTabWinBrowser('https://www.artstation.com/sublim3_3d');">
+				<img class="social-media-img" src="artstation.webp" alt="artstation">
+				<span class="social-media-name">ArtStation</span>
+			</button>
+			<div class="address">
+				<span class="text">Donations:</span>
+				<button onclick="copy('btc-address')" class="address-button" id="btc-button">
+					<img class="address-img" src="btc.webp">
+					<span id="btc-address" class="address-a">bc1qkh50alk2gd29p7tmsxwdyxtgnf76kg32t3fdxn</span>	
+				</button>
+				<button onclick="copy('eth-address')" class="address-button" id="eth-button">
+					<img class="address-img" src="eth.webp">
+					<span id="eth-address" class="address-a">0xe8f3edd5d65f461052e0bd365635c80d39e99f0d</span>
+				</button>
+				<button onclick="copy('sol-address')" class="address-button" id="sol-button">
+					<img class="address-img" src="sol.webp">
+					<span id="sol-address" class="address-a">Eyjo6bp5UNaSrtEnx82p7SSCKwrE1gUzAmo6j1iPXNeg</span>
+				</button>
+			</div>
+		</div>
+	</div>
+
+<script>
+	function copy(str = "eth-address") {
+		let span = document.getElementById(str);
+		const buffer = document.createElement("textarea");
+		let copiedAddress = "error";
+		switch (str) {
+			case "btc-address":
+				copiedAddress = "bc1qkh50alk2gd29p7tmsxwdyxtgnf76kg32t3fdxn";
+				break;
+			case "eth-address":
+				copiedAddress = "0xe8f3edd5d65f461052e0bd365635c80d39e99f0d";
+				break;
+			case "sol-address":
+				copiedAddress = "Eyjo6bp5UNaSrtEnx82p7SSCKwrE1gUzAmo6j1iPXNeg";
+				break;
+			default:
+		}
+		buffer.value = copiedAddress;
+		buffer.style.position = "absolute";
+		buffer.style.left = "-9999px";
+		document.body.appendChild(buffer);
+
+		buffer.select();
+		document.execCommand("copy");
+		document.body.removeChild(buffer);
+		
+		span.textContent = "Address Copied !";
+		span.style.bottom = "26px";
+	}
+
+	function OpenInNewTabWinBrowser(url) {
+		var win = window.open(url, '_blank');
+		win.focus();
+	}
+</script>
+
+</body>
+
+</html>
